@@ -1,0 +1,12 @@
+Notes on the ordering_system_passed.py
+
+where I went wrong originally is thinking that the order list was only containing an array of just the numbers ...
+order = [3, 1, 5]
+
+ instead it would look like....
+
+order = [
+    {"name": "cake", "price": 2.79},
+    {"name": "espresso", "price": 1.99},
+    {"name": "sandwich", "price": 4.99}
+]
