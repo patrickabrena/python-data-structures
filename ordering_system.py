@@ -25,8 +25,26 @@ def calculate_subtotal(order):
     """
     print('Calculating bill subtotal...')
     ### WRITE SOLUTION HERE
+    #need to iterate using a for loop to sum the prices in the object list
+    #init a subtotal variable
+    #init a count variable
+    #write for loop to sum these 
+    
 
-    raise NotImplementedError()
+    subtotal = 0
+    count = 0
+
+    for items in order:
+        #for all the items in order list, take the current subtotal and the add the price using the "price" key of the current index of the returned order
+        subtotal += order[count]["price"]
+        #increment the count variable after so that the next iteration will be selecting order[1] and order[2] for the last iteration so that we target the "price" key of each item in order
+        count += 1
+    #return the subtotal variable rounded to two decimals
+    return round(subtotal, 2)
+        
+
+
+    #raise NotImplementedError()
 
 def calculate_tax(subtotal):
     """ Calculates the tax of an order
@@ -42,8 +60,10 @@ def calculate_tax(subtotal):
     """
     print('Calculating tax from subtotal...')
     ### WRITE SOLUTION HERE
-
-    raise NotImplementedError()
+    #take the returned subtotal order and multiply by .15 and store it in tax variable
+    tax = subtotal * 0.15
+    return round(tax, 2)
+    #raise NotImplementedError()
 
 def summarize_order(order):
     """ Summarizes the order
@@ -64,8 +84,16 @@ def summarize_order(order):
     """
     print_order(order)
     ### WRITE SOLUTION HERE
-
-    raise NotImplementedError()
+    subtotal = calculate_subtotal(order)
+    tax = calculate_tax(subtotal)
+    total = round(subtotal + tax, 2)
+    names = []
+    #using for loop to append items in list
+    for item in order:
+        names.append(item["name"])
+    #return names and total
+    return names, total
+    #raise NotImplementedError()
 
 # This function is provided for you, and will print out the items in an order
 def print_order(order):
