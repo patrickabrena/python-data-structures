@@ -1,0 +1,6 @@
+
+Using 
+Newline 
+Characters
+Writelines accepts a list or an array of strings
+Check the code out on creating_files.py
